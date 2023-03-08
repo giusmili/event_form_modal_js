@@ -1,0 +1,128 @@
+/* reset css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+html{
+    font-size: 62.5%;
+}
+body{
+    font: 1.6rem "Roboto", sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    letter-spacing: .1rem;
+   /* color: #fff;
+   background-color: #222; */
+   display: grid;
+   grid-template-rows: auto 1fr auto;
+   height: 100vh;
+   width: 100vw;
+}
+h1,h2,h3,p,figure,ul,ol{
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
+}
+input[type="text"], 
+input[type="tel"],
+input[type="date"],
+input[type="email"],
+input[type="submit"]{
+    border: 0;
+    background: none;
+    font-size: inherit;
+}
+
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+*{
+    box-sizing: border-box;
+}
+
+/* theme */
+header h1{
+    text-align: center;
+    left: 7.8rem;
+}
+.inner-form fieldset{
+    border-radius: 1rem;
+    border: solid .1rem hsl(221, 44%, 41%);
+}
+.inner-form fieldset legend{
+    padding: 1rem;
+    font-size: large;
+    font-variant: small-caps; /* petites capitales */
+}
+.inner-form{
+    max-width: 90rem;
+    margin: 5rem auto 2rem;
+}
+.inner-form form *{
+    display: block;
+    padding: 1rem 0;
+}
+.inner-form form input[type="checkbox"]{
+    width: auto;
+    margin: 2rem 0;
+}
+
+.inner-form form input{
+    /* border: solid .1rem #333; */
+    width: 100%;
+    line-height: 3.5rem;
+    padding: .5rem;
+    transition: all .6s ease-in-out;
+}
+
+.inner-form form input[type="text"], 
+.inner-form form input[type="tel"],
+.inner-form form input[type="date"],
+.inner-form form input[type="email"]{
+    
+    border-bottom: solid .1rem #ccc; 
+  
+    background: rgb(204,204,204);
+    background: linear-gradient(90deg, rgba(204,204,204,0.6) 0%, rgba(255,255,255,1) 100%); 
+    width: 60%;
+
+}
+
+.inner-form form [placeholder]{
+    font-style: italic;
+    transition: all .6s ease-in-out;
+}
+.inner-form form [placeholder]:focus{
+    font-style: normal;
+}
+.inner-form form input:focus:not(.inner-form form input[type="submit"],
+.inner-form form input[type="checkbox"]){
+    outline: 0;
+    box-shadow: 0 0 2rem rgb(252, 96, 228);
+    width: 100%;
+    border-bottom: solid .1rem rgb(79, 79, 79);
+}
+form input[type="checkbox"]{
+    display: inline-block;
+    width: auto;
+}
+
+
+
+.inner-form form label.condition{
+    display: inline-block;
+    font-style: italic;
+}
+/* send button */
+.inner-form form input[type="submit"]{
+   background-color: hsl(221, 44%, 41%);
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 35%;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: .4rem;
+    font-size: medium;
+}
+footer p{
+    text-align: center;
+}

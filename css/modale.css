@@ -1,0 +1,126 @@
+/* reset */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300&display=swap');
+html{
+    font-size: 62.5%;
+    background: #222 url(../asset/montage.jpg)no-repeat fixed center center / cover;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    font: 1.6rem 'Roboto Slab',sans-serif;
+    margin: 0;
+    letter-spacing: 0.1rem;
+    line-height: 1.6;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* 
+    header auto une fraction au milieu footer auto
+    */
+}
+h1,h2,h3,p,figure,ul,ol{
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3{
+    font-weight: 300;
+}
+img{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+a{
+    text-decoration: none;
+    color: #222;
+}
+/* theme */
+
+header h1, footer{
+    
+    line-height: 7.8rem;
+    text-align: center;
+    color: #fff;
+    background-color: #222;
+}
+header h1{
+    font-family: 'star_trek_future_regular';
+    font-size: 5rem;
+    color: rgb(233, 240, 11);
+}
+header h1 a{
+    color: inherit;
+}
+
+.modal-parent{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(111, 8, 8, 0.3); /* couleur arrière-plan */
+    z-index: -1;
+    backdrop-filter: blur(.3rem); /* blur arrière-plan */
+    opacity: 0;
+    transition: all .6s ease-in-out;
+}
+.appear-modal{
+    opacity: 1;
+    z-index: 1;
+}
+/* .appear-modal:target{
+    opacity: 1;
+    z-index: 1;
+} */
+
+.modal-parent > figure{
+    position: relative;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70rem;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+.modal-parent figure a{
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-weight: bolder;
+}
+.modal-parent figure figcaption{
+    position: relative;
+}
+.modal-parent figure figcaption a.btn-closed{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 20rem;
+    line-height: 4.5rem;
+    background-color: #7175a5;
+    text-align: center;
+    color: #f3ede0;
+    margin-bottom: 1.5rem;
+    border-radius: .6rem;
+    /* border: solid .5rem transparent;
+    border-bottom-color: #d0d3f6; */
+    box-shadow: 0 .6rem #413441;
+    text-shadow: -.1rem .1rem #413441;
+}
+footer{
+    line-height: 3.5rem;
+}
+@media screen and (max-width: 100rem) {
+    header h1{
+        font-size: 1.8rem;
+    }
+    .modal-parent figure{
+        width: 100%;
+    }
+}

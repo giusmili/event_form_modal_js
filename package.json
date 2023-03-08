@@ -1,0 +1,15 @@
+{
+  "name": "2-bis-slam--1-form",
+  "version": "1.0.0",
+  "description": "> Cours sur les formulaires\r ```html\r <header>\r     <h1>\r      Formulaire d'inscription\r     </h1>\r </header>\r ```\r # Installer Babel\r ```cmd\r     # Cours Javascript - 2023\r     ## Installation de Babel\r     cmd\r     vérifier la version npm\r     puis npm init\r     npm install --save-dev babel-cli babel-preset-env",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel --no-babelrc src -w -d js --preset=env"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
