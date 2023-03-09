@@ -1,35 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("ok");
 
-    const btn = document.querySelector("header h1 a");
-    const modale = document.querySelector(".modal-parent");
-    const closed = document.querySelector(".btn-closed");
-    const picture = document.querySelector("figure");
-    const cross_closed = document.querySelector("figure .cross");
+    //objet modale
+    user_modale = {
+        btn: document.querySelector("header h1 a"),
+        modale: document.querySelector(".modal-parent"),
+        closed: document.querySelector(".btn-closed"),
+        picture: document.querySelector("figure"),
+        cross_closed: document.querySelector("figure .cross"),
+        open_function() {
+            this.modale.classList.add("appear-modal");
+        },
+        cross_function() {
+            this.modale.classList.remove("appear-modal");
+        }
 
-    console.log(modale);
+    };
 
-    btn.addEventListener("click", () => {
-        console.log(btn.tagName);
-        modale.classList.add("appear-modal");
+    //event
+
+    user_modale.btn.addEventListener("click", () => {
+
+        user_modale.open_function();
     });
 
-    cross_closed.addEventListener("click", () => {
-        modale.classList.remove("appear-modal");
+    user_modale.cross_closed.addEventListener("click", () => {
+        user_modale.cross_function();
     });
 
-    /* pour fermer la fenêtre */
-    closed.addEventListener("click", () => {
-        modale.classList.remove("appear-modal");
+    user_modale.closed.addEventListener("click", () => {
+        user_modale.cross_function();
     });
 
-    /* fermer en dehors */
-    modale.addEventListener("click", function () {
-        this.classList.remove("appear-modal");
+    user_modale.modale.addEventListener("click", () => {
+        user_modale.cross_function();
     });
-
-    /* stopper la propagation de l'événement modale */
-    picture.addEventListener("click", function (e) {
+    user_modale.picture.addEventListener("click", e => {
         e.stopPropagation();
     });
 });
