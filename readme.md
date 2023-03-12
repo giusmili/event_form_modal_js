@@ -24,3 +24,38 @@
 
     ## Exemple de création d'Objet en JS
 ```
+## object
+```js
+User = {
+    constructor(nom, prenom){
+        this.nom = nom;
+        this.prenom = prenom
+    },
+    getterF(){
+        console.log(`${this.nom} : ${this.prenom}`)
+    }
+}
+
+const new_user = Object.create(User);
+ new_user.constructor("Gius","Mili")
+ new_user.getterF()
+ ```
+ Le constructeur de l'objet prend en charge les valeurs et la méthode les affiches
+
+ Pour les expression régulières ci-dessous des exemples de code :
+
+ ```js
+   const expr = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/; /*expression régulière mail*/
+   const regex = '[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}';/* regex phone */
+
+		let mail, numero;
+		mail = prompt("Ajouter votre mail","")
+        numero = "+33 06 82 24 33 00"
+
+        //deux méthod pour tester le format mail
+        expr.test(mail) ? alert("adresse valide") : alert("adresse invalide")
+		mail.match(expr) ? alert("adresse valide") : alert("adresse invalide")
+
+        //Ici on teste le format de numéro à 10 chiffre
+        numero.match(regex) ? console.log("numéro valide") : console.log("numéro invalide")
+ ```

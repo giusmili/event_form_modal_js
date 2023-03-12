@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", e => {
     let validate = document.querySelector('input[type="submit"]');
     let check = document.getElementsByName("conditions");
 
-    validateEmail = email => {
+    validate_email = email => {
         let emailReg = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i);
         return emailReg.test(email);
     };
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", e => {
     /* gestionnaire d'événemment */
     validate.addEventListener("click", e => {
         e.preventDefault();
+
         for (let index = 0; index < input_all.length; index++) {
             /* on fait le trie de 2 input et on teste les autres */
             input_all[index].value !== "Envoyer" && input_all[index].value !== "yes" ? console.log(input_all[index]) : false;
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
         //validation mail
 
-        if (!validateEmail(input_all[3].value) || !check[0].checked || isNaN(input_all[4].value)) {
+        if (!validate_email(input_all[3].value) || !check[0].checked || isNaN(input_all[4].value)) {
             // alert("mail invalide ou cocher la case")
             Swal.fire({
                 icon: 'error',
